@@ -1,13 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Fateha from './pages/Fateha';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+      <Stack.Screen
+          name="Fateha"
+          component={Fateha}
+          options={{ title: 'Fateha' }}
+        />
+        <Stack.Screen name="Baqara1" component={Baqara1} />
+
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -17,5 +26,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },fatehaHeader:{
+
+  },
+  fatehaMain:{
+    alignItems:'center',
+    justifyContent:"center",
+    fontWeight:"bold",
+    fontSize:24
   },
 });
